@@ -1,3 +1,6 @@
+![easyChat photo](https://live.staticflickr.com/65535/51097789859_3f8dbc857e_b.jpg)
+
+
 Project link from expo: 
 
 https://expo.io/--/to-exp/exp%3A%2F%2Fexp.host%2F%40hasanugurlu%2FEasyChat
