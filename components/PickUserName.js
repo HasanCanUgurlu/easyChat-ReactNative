@@ -5,10 +5,14 @@ import {
   TextInput,
   Button,
   StatusBar,
+  Platform,
 } from "react-native";
+import { useHeaderHeight } from "@react-navigation/stack";
 
 export default function PickUserName({ navigation }) {
   const [username, setUsername] = useState("");
+
+  const headerHeight = useHeaderHeight();
 
   function handleUsernameSubmit() {
     navigation.replace("ChatPage", {
@@ -23,7 +27,14 @@ export default function PickUserName({ navigation }) {
   }, [navigation]);
 
   return (
-    <KeyboardAvoidingView style={styles.container}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : null}
+      style={styles.container}
+      keyboardVerticalOffset={Platform.select({
+        ios: () => -100,
+        android: () => null,
+      })()}
+    >
       <StatusBar barStyle="light-content" />
 
       <TextInput
